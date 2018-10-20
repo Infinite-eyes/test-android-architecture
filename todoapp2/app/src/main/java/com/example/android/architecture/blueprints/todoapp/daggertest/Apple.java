@@ -12,11 +12,12 @@ import javax.inject.Inject;
  **/
 public class Apple {
 
+    public Color color;
+
     @Inject
-    public Apple() {
-
+    public Apple(Color color) {
+        this.color = color;
     }
-
 
 
 
