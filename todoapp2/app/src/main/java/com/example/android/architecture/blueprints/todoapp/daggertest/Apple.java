@@ -10,7 +10,7 @@ import javax.inject.Inject;
  * @mail cwm930215@gmail.com
  * @since 2018/10/20 下午10:52
  **/
-public class Apple {
+public class Apple  extends Fruit{
 
     public Color color;
 
@@ -20,7 +20,7 @@ public class Apple {
     }
 
 
-
+    @Override
     public void print() {
         Log.d("TAG","This is an apple");
     }
