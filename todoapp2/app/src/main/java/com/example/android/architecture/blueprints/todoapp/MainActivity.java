@@ -13,9 +13,13 @@ public class MainActivity extends AppCompatActivity {
 
 //    @Inject
 //    A a;
-    @Inject
-    Apple apple;
 
+    private Apple apple;
+
+    @Inject
+    public void setApple(Apple apple) {
+        this.apple = apple;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
