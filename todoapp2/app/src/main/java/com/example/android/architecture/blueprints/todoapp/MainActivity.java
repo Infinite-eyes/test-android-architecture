@@ -5,8 +5,7 @@ import android.os.Bundle;
 
 import com.example.android.architecture.blueprints.todoapp.daggertest.A;
 import com.example.android.architecture.blueprints.todoapp.daggertest.Apple;
-//import com.example.android.architecture.blueprints.todoapp.daggertest.DaggerMainComponent;
-//import com.example.android.architecture.blueprints.todoapp.daggertest.DaggerMainComponent;
+import com.example.android.architecture.blueprints.todoapp.daggertest.DaggerMainComponent;
 
 import javax.inject.Inject;
 
@@ -14,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
 //    @Inject
 //    A a;
-    @Inject
+//    @Inject
     Apple apple;
 
     @Override
@@ -22,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        DaggerMainComponent.create().inject(this);
+        DaggerMainComponent.create().inject(this);
 
-
+        apple.print();
 //        a.eat();
     }
 }
