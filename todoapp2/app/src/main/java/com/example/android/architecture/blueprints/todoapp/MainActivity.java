@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
 //    @Inject
 //    A a;
-//    @Inject
+    @Inject
     Apple apple;
 
     @Override
