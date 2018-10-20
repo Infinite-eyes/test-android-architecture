@@ -10,7 +10,8 @@ import dagger.Component;
  * @mail cwm19930215@163.com
  * @since 2018/10/19 下午2:46
  **/
-@Component(modules = {MainModule.class})
+//@Component(modules = {MainModule.class})
+@Component
 public interface MainComponent {
     void  inject(MainActivity activity);
 }

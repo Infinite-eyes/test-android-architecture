@@ -4,15 +4,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.android.architecture.blueprints.todoapp.daggertest.A;
+import com.example.android.architecture.blueprints.todoapp.daggertest.Apple;
 import com.example.android.architecture.blueprints.todoapp.daggertest.DaggerMainComponent;
+//import com.example.android.architecture.blueprints.todoapp.daggertest.DaggerMainComponent;
 
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
+//    @Inject
+//    A a;
     @Inject
-    A a;
-
+    Apple apple;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,6 @@ public class MainActivity extends AppCompatActivity {
         DaggerMainComponent.create().inject(this);
 
 
-        a.eat();
+//        a.eat();
     }
 }
