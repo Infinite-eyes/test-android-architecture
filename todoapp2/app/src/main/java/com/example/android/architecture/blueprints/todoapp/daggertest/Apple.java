@@ -19,6 +19,9 @@ public class Apple  extends Fruit{
         this.color = color;
     }
 
+    public Apple() {
+        this.color = color;
+    }
 
     @Override
     public void print() {

@@ -11,7 +11,7 @@ import dagger.Component;
  * @since 2018/10/19 下午2:46
  **/
 //@Component(modules = {MainModule.class})
-@Component
+//@Component
 public interface MainComponent {
-    void  inject(MainActivity activity);
+//    void  inject(MainActivity activity);
 }

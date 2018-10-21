@@ -5,36 +5,33 @@ import android.os.Bundle;
 
 import com.example.android.architecture.blueprints.todoapp.daggertest.A;
 import com.example.android.architecture.blueprints.todoapp.daggertest.Apple;
-import com.example.android.architecture.blueprints.todoapp.daggertest.DaggerMainComponent;
 import com.example.android.architecture.blueprints.todoapp.daggertest.Fruit;
+import com.example.android.architecture.blueprints.todoapp.daggertest.FruitModule;
 
 import javax.inject.Inject;
 
+import dagger.Component;
+
+
 public class MainActivity extends AppCompatActivity {
 
-    //    @Inject
-//    A a;
-
-    
-    // right
-    private Fruit apple;
-
     @Inject
-    public void setApple(Apple apple) {
-        this.apple = apple;
+    Fruit apple;
+
+    @Component(modules = FruitModule.class)
+    interface MainActivityComponent{
+        void inject(MainActivity activity);
     }
-    //wrong
-//    @Inject
-//    private Fruit apple;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DaggerMainComponent.create().inject(this);
+        DaggerMainActivity_MainActivityComponent.create().inject(this);
 
         apple.print();
-//        a.eat();
     }
 }
