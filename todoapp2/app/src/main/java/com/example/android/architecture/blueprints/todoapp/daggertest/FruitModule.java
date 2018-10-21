@@ -1,6 +1,10 @@
 package com.example.android.architecture.blueprints.todoapp.daggertest;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 import javax.inject.Named;
+import javax.inject.Qualifier;
 
 import dagger.Module;
 import dagger.Provides;
@@ -14,14 +18,19 @@ import dagger.Provides;
 @Module
 public class FruitModule {
 
+    @Qualifier
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface ProvideBanana{};
+
+
     @Provides
-    @Named("Apple")
+    @ProvideApple
     Fruit provideApple(){
         return new Apple();
     }
 
     @Provides
-    @Named("Banana")
+    @ProvideBanana
     Fruit provideBanana(){
         return new Banana();
     }

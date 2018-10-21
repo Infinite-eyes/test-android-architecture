@@ -7,6 +7,7 @@ import com.example.android.architecture.blueprints.todoapp.daggertest.A;
 import com.example.android.architecture.blueprints.todoapp.daggertest.Apple;
 import com.example.android.architecture.blueprints.todoapp.daggertest.Fruit;
 import com.example.android.architecture.blueprints.todoapp.daggertest.FruitModule;
+import com.example.android.architecture.blueprints.todoapp.daggertest.ProvideApple;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -17,11 +18,11 @@ import dagger.Component;
 public class MainActivity extends AppCompatActivity {
 
     @Inject
-    @Named("Apple")
+    @ProvideApple
     Fruit apple;
 
     @Inject
-    @Named("Banana")
+    @FruitModule.ProvideBanana
     public Fruit banana;
 
     @Component(modules = FruitModule.class)
