@@ -1,5 +1,7 @@
 package com.example.android.architecture.blueprints.todoapp.daggertest;
 
+import com.example.android.architecture.blueprints.todoapp.MainActivity;
+
 import dagger.Component;
 
 /**
@@ -10,12 +12,5 @@ import dagger.Component;
  **/
 @Component(modules = VegetableModule.class)
 public interface BaseComponent {
-
-    @VegetableModule.ProvideTomato
-    Vegetable getTomato();
-
-    @VegetableModule.ProvidePotato
-    Vegetable getPotato();
-
-
+    MainActivity.MainActivityComponent plus();
 }

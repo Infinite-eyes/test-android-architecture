@@ -17,6 +17,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import dagger.Component;
+import dagger.Subcomponent;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -38,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     Vegetable potato;
 
 
-    @Component(dependencies = BaseComponent.class)
-    interface MainActivityComponent {
+    @Subcomponent(modules = FruitModule.class)
+    public interface MainActivityComponent {
         void inject(MainActivity activity);
     }
 
@@ -51,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
 
 //        DaggerMainActivity_MainActivityComponent.create().inject(this);
 
-        DaggerMainActivity_MainActivityComponent.builder()
-                .baseComponent(DaggerBaseComponent.create())
-                .build()
-                .inject(this);
+//        DaggerMainActivity_MainActivityComponent.builder()
+//                .baseComponent(DaggerBaseComponent.create())
+//                .build()
+//                .inject(this);
 
+        DaggerBaseComponent.create().plus().inject(this);
 
         tomato.print();
         potato.print();
