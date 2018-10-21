@@ -14,12 +14,16 @@ import dagger.android.support.DaggerAppCompatActivity;
 import dagger.android.support.HasSupportFragmentInjector;
 
 /**
+ * des
+ * https://google.github.io/dagger/android
+ * https://google.github.io/dagger/users-guide
+ *
  * @author chenweiming
  * @version 1.0
  * @mail cwm930215@gmail.com
  * @since 2018/10/21 下午9:23
  **/
-public class App  extends DaggerApplication  {
+public class App extends DaggerApplication {
 
 //    @Inject
 //    DispatchingAndroidInjector<Fragment> fragmentSupportInjector;

@@ -4,12 +4,15 @@ import android.util.Log;
 
 import javax.inject.Inject;
 
+import dagger.Reusable;
+
 /**
  * @author chenweiming
  * @version 1.0
  * @mail cwm930215@gmail.com
  * @since 2018/10/21 下午9:20
  **/
+@Reusable
 public class MainPresenter {
 
     @Inject
