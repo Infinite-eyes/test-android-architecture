@@ -1,5 +1,7 @@
 package com.example.android.architecture.blueprints.todoapp.daggertest;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -14,6 +16,7 @@ public class MainModule {
 
 
     @Provides
+    @Named("Apple")
     B providerB(){
         return new B();
     }

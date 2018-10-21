@@ -1,5 +1,7 @@
 package com.example.android.architecture.blueprints.todoapp.daggertest;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -13,9 +15,14 @@ import dagger.Provides;
 public class FruitModule {
 
     @Provides
-    Fruit provideFruit(){
+    @Named("Apple")
+    Fruit provideApple(){
         return new Apple();
     }
 
-
+    @Provides
+    @Named("Banana")
+    Fruit provideBanana(){
+        return new Banana();
+    }
 }
