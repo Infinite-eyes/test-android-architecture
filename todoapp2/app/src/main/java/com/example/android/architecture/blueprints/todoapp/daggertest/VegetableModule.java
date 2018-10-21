@@ -4,6 +4,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 import javax.inject.Qualifier;
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -28,6 +29,7 @@ public class VegetableModule {
     public @interface ProvidePotato {
     }
 
+    @Singleton
     @Provides
     @ProvideTomato
     Vegetable provideTomato() {

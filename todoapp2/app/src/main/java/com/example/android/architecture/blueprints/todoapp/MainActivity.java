@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     Vegetable tomato;
 
     @Inject
+    @VegetableModule.ProvideTomato
+    Vegetable tomato2;
+
+    @Inject
     @VegetableModule.ProvidePotato
     Vegetable potato;
 
@@ -61,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
 
         tomato.print();
         potato.print();
+       if( tomato == tomato2){
+
+        }
 
 //        apple.print();
 //        banana.print();
