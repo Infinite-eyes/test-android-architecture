@@ -12,8 +12,8 @@ import dagger.Component;
  * @mail cwm930215@gmail.com
  * @since 2018/10/21 上午11:50
  **/
-@Singleton
-@Component(modules = VegetableModule.class)
+//@Singleton
+//@Component(modules = VegetableModule.class)
 public interface BaseComponent {
-    MainActivity.MainActivityComponent plus();
+//    MainActivity.MainActivityComponent plus();
 }

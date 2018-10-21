@@ -6,9 +6,7 @@ import android.os.Bundle;
 import com.example.android.architecture.blueprints.todoapp.daggertest.A;
 import com.example.android.architecture.blueprints.todoapp.daggertest.Apple;
 import com.example.android.architecture.blueprints.todoapp.daggertest.BaseComponent;
-import com.example.android.architecture.blueprints.todoapp.daggertest.DaggerBaseComponent;
-import com.example.android.architecture.blueprints.todoapp.daggertest.Fruit;
-import com.example.android.architecture.blueprints.todoapp.daggertest.FruitModule;
+import com.example.android.architecture.blueprints.todoapp.daggertest.MainPresenter;
 import com.example.android.architecture.blueprints.todoapp.daggertest.ProvideApple;
 import com.example.android.architecture.blueprints.todoapp.daggertest.Vegetable;
 import com.example.android.architecture.blueprints.todoapp.daggertest.VegetableModule;
@@ -18,9 +16,10 @@ import javax.inject.Named;
 
 import dagger.Component;
 import dagger.Subcomponent;
+import dagger.android.support.DaggerAppCompatActivity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends DaggerAppCompatActivity {
 
 //    @Inject
 //    @ProvideApple
@@ -30,30 +29,37 @@ public class MainActivity extends AppCompatActivity {
 //    @FruitModule.ProvideBanana
 //    public Fruit banana;
 
-    @Inject
-    @VegetableModule.ProvideTomato
-    Vegetable tomato;
+//    @Inject
+//    @VegetableModule.ProvideTomato
+//    Vegetable tomato;
+//
+//    @Inject
+//    @VegetableModule.ProvideTomato
+//    Vegetable tomato2;
+//
+//    @Inject
+//    @VegetableModule.ProvidePotato
+//    Vegetable potato;
+//
+//
+//    @Subcomponent(modules = FruitModule.class)
+//    public interface MainActivityComponent {
+//        void inject(MainActivity activity);
+//    }
 
-    @Inject
-    @VegetableModule.ProvideTomato
-    Vegetable tomato2;
-
-    @Inject
-    @VegetableModule.ProvidePotato
-    Vegetable potato;
-
-
-    @Subcomponent(modules = FruitModule.class)
-    public interface MainActivityComponent {
-        void inject(MainActivity activity);
-    }
-
+    @Inject  //现在只要简单的声明即可注入
+    MainPresenter mainPresenter;
+//
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
+        mainPresenter.print();
 //        DaggerMainActivity_MainActivityComponent.create().inject(this);
 
 //        DaggerMainActivity_MainActivityComponent.builder()
@@ -61,13 +67,10 @@ public class MainActivity extends AppCompatActivity {
 //                .build()
 //                .inject(this);
 
-        DaggerBaseComponent.create().plus().inject(this);
+//        DaggerBaseComponent.create().plus().inject(this);
 
-        tomato.print();
-        potato.print();
-       if( tomato == tomato2){
-
-        }
+//        tomato.print();
+//        potato.print();
 
 //        apple.print();
 //        banana.print();
