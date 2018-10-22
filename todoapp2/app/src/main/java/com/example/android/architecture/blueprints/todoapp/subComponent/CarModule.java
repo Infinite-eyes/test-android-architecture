@@ -12,7 +12,7 @@ import dagger.Provides;
  * @mail cwm930215@gmail.com
  * @since 2018/10/22 下午2:33
  **/
-@Module
+@Module(subcomponents = SonComponent.class)
 public class CarModule {
     @Provides
 //    @MyScope

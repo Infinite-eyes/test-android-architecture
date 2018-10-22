@@ -18,6 +18,9 @@ public interface ManComponent {
 
     @Named("car1")
     Car provide();
+
+
+    SonComponent.Builder subcomponents();
 }
 
 
