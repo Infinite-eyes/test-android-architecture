@@ -11,10 +11,10 @@ import dagger.android.AndroidInjector;
  * @mail cwm930215@gmail.com
  * @since 2018/10/21 下午11:34
  **/
-@Subcomponent
+//@Subcomponent
 public interface MainActivitySubcomponent extends AndroidInjector<MainActivity> {
-    @Subcomponent.Builder
-    abstract class Builder extends AndroidInjector.Builder<MainActivity> {
-    }
+//    @Subcomponent.Builder
+//    abstract class Builder extends AndroidInjector.Builder<MainActivity> {
+//    }
 
 }

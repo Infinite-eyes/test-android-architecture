@@ -1,6 +1,7 @@
 package com.example.android.architecture.blueprints.todoapp;
 
 import dagger.Component;
+import dagger.android.ContributesAndroidInjector;
 
 /**
  * @author chenweiming
@@ -11,4 +12,6 @@ import dagger.Component;
 @Component(modules = {MainActivityModule.class})
 interface MainApplicationComponent {
     void inject(App app);
+
+
 }
