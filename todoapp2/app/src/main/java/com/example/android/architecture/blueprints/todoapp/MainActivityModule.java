@@ -15,13 +15,13 @@ import dagger.multibindings.IntoMap;
  * @mail cwm930215@gmail.com
  * @since 2018/10/21 下午11:38
  **/
-//@Module(subcomponents = MainActivitySubcomponent.class)
+@Module(subcomponents = MainActivitySubcomponent.class)
 abstract class MainActivityModule {
-//    @Binds
-//    @IntoMap
-//    @ActivityKey(MainActivity.class)
-//    abstract AndroidInjector.Factory<? extends Activity>
-//    bindMainActivityInjectorFactory(MainActivitySubcomponent.Builder builder);
+    @Binds
+    @IntoMap
+    @ActivityKey(MainActivity.class)
+    abstract AndroidInjector.Factory<? extends Activity>
+    bindMainActivityInjectorFactory(MainActivitySubcomponent.Builder builder);
 
 
 }

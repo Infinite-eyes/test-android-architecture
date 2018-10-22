@@ -4,6 +4,7 @@ package com.example.android.architecture.blueprints.todoapp;
 import android.app.Activity;
 import android.app.Application;
 
+
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;
@@ -20,18 +21,20 @@ import dagger.android.HasActivityInjector;
  * @mail cwm930215@gmail.com
  * @since 2018/10/21 下午9:23
  **/
-public class App extends Application  {
+public class App extends  Application implements HasActivityInjector   {
 
-//    @Inject
-//    DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
+    @Inject
+    DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        DaggerMainApplicationComponent.create()
+                .inject(this);
     }
 
-//    @Override
-//    public AndroidInjector<Activity> activityInjector() {
-//        return dispatchingActivityInjector;
-//    }
+    @Override
+    public AndroidInjector<Activity> activityInjector() {
+        return dispatchingActivityInjector;
+    }
 }
