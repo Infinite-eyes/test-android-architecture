@@ -8,8 +8,9 @@ import dagger.Component;
  * @mail cwm930215@gmail.com
  * @since 2018/10/21 下午11:46
  **/
-@Component(modules = {MainActivityModule.class})
+//@Component(modules = {MainActivityModule.class})
 interface MainApplicationComponent {
 
+    MainActivitySubcomponent plus();
 
 }

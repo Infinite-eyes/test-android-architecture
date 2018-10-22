@@ -1,7 +1,14 @@
 package com.example.android.architecture.blueprints.todoapp;
 
 
+import android.app.Activity;
+import android.app.Application;
 
+import javax.inject.Inject;
+
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
 
 /**
  * des
@@ -13,17 +20,18 @@ package com.example.android.architecture.blueprints.todoapp;
  * @mail cwm930215@gmail.com
  * @since 2018/10/21 下午9:23
  **/
-public class App {
+public class App extends Application  {
 
 //    @Inject
-//    DispatchingAndroidInjector<Fragment> fragmentSupportInjector;
+//    DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
 
 //    @Override
-//    protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
-//        return DaggerAppComponent.create();
-//    }
-//    @Override
-//    public AndroidInjector<Fragment> supportFragmentInjector() {
-//        return fragmentSupportInjector;
+//    public AndroidInjector<Activity> activityInjector() {
+//        return dispatchingActivityInjector;
 //    }
 }
