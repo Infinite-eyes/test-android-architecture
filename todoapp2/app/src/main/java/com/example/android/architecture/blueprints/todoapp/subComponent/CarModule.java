@@ -1,6 +1,7 @@
 package com.example.android.architecture.blueprints.todoapp.subComponent;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -17,13 +18,14 @@ public class CarModule {
 //    @MyScope
 //    @FriendScope
     @Named("car1")
-    static Car provideCar1() {
+    Car provideCar1() {
         return new Car();
     }
-//    @FriendScope
+
+    //    @FriendScope
     @Provides
     @Named("car2")
-    static Car provideCar2() {
+    Car provideCar2() {
         return new Car();
     }
 

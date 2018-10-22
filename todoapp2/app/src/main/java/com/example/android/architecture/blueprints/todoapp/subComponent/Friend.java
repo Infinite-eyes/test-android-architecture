@@ -12,9 +12,13 @@ import javax.inject.Named;
 public class Friend {
     @Inject
     @Named("car1")
-    Car car;    // 车是向 Man 借的
+    public Car car1;    // 车是向 Man 借的
+
+    public Friend(ManComponent manComponent) {
+        DaggerFriendComponent.builder().manComponent(manComponent).build().injectMan(this);
+    }
 
     public void goSightseeing() {
-        car.go();
+        car1.go();
     }
 }

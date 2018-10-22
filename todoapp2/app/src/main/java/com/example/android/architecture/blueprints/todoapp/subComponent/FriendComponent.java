@@ -1,5 +1,7 @@
 package com.example.android.architecture.blueprints.todoapp.subComponent;
 
+import javax.inject.Singleton;
+
 import dagger.Component;
 
 /**
@@ -9,7 +11,7 @@ import dagger.Component;
  * @since 2018/10/22 下午3:05
  **/
 @FriendScope
-@Component(modules = CarModule.class)
+@Component(dependencies = ManComponent.class)
 public interface FriendComponent {
     void injectMan(Friend friend);
 }

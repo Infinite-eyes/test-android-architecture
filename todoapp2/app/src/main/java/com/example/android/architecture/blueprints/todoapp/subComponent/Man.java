@@ -12,22 +12,33 @@ import dagger.Lazy;
  * @since 2018/10/22 下午2:25
  **/
 public class Man {
-//    @Inject
+    //    @Inject
 //    @Named("car1")
 //    Lazy<Car> lazyCar;
 
+    ManComponent manComponent;
     @Inject
     @Named("car1")
-    Car car;
+   public Car car1;
 
     @Inject
     @Named("car2")
-    Car car2;
+    public Car car2;
+
+
+    public Man() {
+        manComponent = DaggerManComponent.create();
+        manComponent.injectMan(this);
+    }
+
+    public ManComponent getManComponent() {
+        manComponent = DaggerManComponent.create();
+        return manComponent;
+    }
 
     public void goWork() {
-        DaggerManComponent.create().injectMan(this);
 //        lazyCar.get().go(); // lazyCar.get() 返回 Car 实例
 
-        car.go();
+        car1.go();
     }
 }

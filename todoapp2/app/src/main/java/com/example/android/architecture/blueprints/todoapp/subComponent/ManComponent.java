@@ -1,5 +1,8 @@
 package com.example.android.architecture.blueprints.todoapp.subComponent;
 
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import dagger.Component;
 
 /**
@@ -13,7 +16,8 @@ import dagger.Component;
 public interface ManComponent {
     void injectMan(Man man);
 
-//    Car car();
+    @Named("car1")
+    Car provide();
 }
 
 
