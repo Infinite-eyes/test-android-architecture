@@ -30,7 +30,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import dagger.android.support.DaggerFragment;
+
 import static com.google.common.base.Preconditions.checkNotNull;
+
 
 /**
  * @author chenweiming
@@ -39,7 +42,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * @since 2018/10/20 下午4:22
  **/
 @ActivityScoped
-public class TasksFragment extends Fragment implements TasksContract.View {
+public class TasksFragment extends DaggerFragment implements TasksContract.View {
 
     @Inject
     TasksContract.Presenter mPresenter;
@@ -158,7 +161,7 @@ public class TasksFragment extends Fragment implements TasksContract.View {
 
         setHasOptionsMenu(true);
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return root;
     }
 
     @Override

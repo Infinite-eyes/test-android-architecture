@@ -19,6 +19,11 @@ public class TasksPresenter implements TasksContract.Presenter {
 
     private  TasksRepository mTasksRepository;
 
+    private TasksContract.View mTasksView;
+
+    private TasksFilterType mCurrentFiltering = TasksFilterType.ALL_TASKS;
+
+
     TasksPresenter(TasksRepository tasksRepository){
         mTasksRepository = tasksRepository;
     }
@@ -27,7 +32,6 @@ public class TasksPresenter implements TasksContract.Presenter {
     TasksPresenter(){
     }
 
-    private TasksFilterType mCurrentFiltering = TasksFilterType.ACTIVE_TASKS;
 
     @Override
     public void result(int requestCode, int resultCode) {
@@ -71,7 +75,7 @@ public class TasksPresenter implements TasksContract.Presenter {
 
     @Override
     public void setFiltering(TasksFilterType requestType) {
-
+        mCurrentFiltering = requestType;
     }
 
     @Override

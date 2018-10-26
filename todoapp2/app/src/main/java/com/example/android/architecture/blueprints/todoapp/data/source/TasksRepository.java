@@ -32,7 +32,7 @@ public class TasksRepository implements TasksDataSource {
 
     boolean mCacheIsDirty = false;
 
-//    @Inject
+    @Inject
     TasksRepository(@Remote TasksDataSource tasksRemoteDataSource,
                     @Local TasksDataSource tasksLocalDataSource) {
         mTasksRemoteDataSource = tasksRemoteDataSource;

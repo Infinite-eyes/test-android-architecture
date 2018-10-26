@@ -3,6 +3,7 @@ package com.example.android.architecture.blueprints.todoapp.di;
 import android.app.Application;
 
 import com.example.android.architecture.blueprints.todoapp.ToDoApplication;
+import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepositoryModule;
 
 import javax.inject.Singleton;
 
@@ -18,19 +19,20 @@ import dagger.android.support.AndroidSupportInjectionModule;
  * @since 2018/10/20 下午7:37
  **/
 @Singleton
-@Component(modules =  {
+@Component(modules =  {TasksRepositoryModule.class,
+        ApplicationModule.class,
         ActivityBindingModule.class,
         AndroidSupportInjectionModule.class})
 public interface AppComponent extends AndroidInjector<ToDoApplication> {
 
-//    @Component.Builder
-//    interface Builder {
+    @Component.Builder
+    interface Builder {
 
-//        @BindsInstance
-//        AppComponent.Builder application(Application application);
-//
-//        AppComponent build();
-//    }
+        @BindsInstance
+        AppComponent.Builder application(Application application);
+
+        AppComponent build();
+    }
 
 
 }

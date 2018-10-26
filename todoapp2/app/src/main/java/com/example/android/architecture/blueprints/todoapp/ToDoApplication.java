@@ -1,7 +1,13 @@
 package com.example.android.architecture.blueprints.todoapp;
 
 
+import android.support.annotation.VisibleForTesting;
+
+import com.example.android.architecture.blueprints.todoapp.data.Task;
+import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository;
 import com.example.android.architecture.blueprints.todoapp.di.DaggerAppComponent;
+
+import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
@@ -13,11 +19,18 @@ import dagger.android.DaggerApplication;
  **/
 public class ToDoApplication extends DaggerApplication {
 
+    @Inject
+    TasksRepository tasksRepository;
 
     @Override
     protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
-//        return DaggerAppComponent.builder().application(this).build();
+        return DaggerAppComponent.builder().application(this).build();
 //        return null;
-        return DaggerAppComponent.create();
+//        return DaggerAppComponent.create();
+    }
+
+    @VisibleForTesting
+    public TasksRepository getTasksRepository() {
+        return tasksRepository;
     }
 }
