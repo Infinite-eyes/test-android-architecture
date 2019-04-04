@@ -16,12 +16,12 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public abstract class TasksModule {
 
-    @FragmentScoped
+//    @FragmentScoped
     @ContributesAndroidInjector
     abstract TasksFragment tasksFragment();
 
 
-    @ActivityScoped
+//    @ActivityScoped
     @Binds abstract TasksContract.Presenter taskPresenter(TasksPresenter presenter);
 
 

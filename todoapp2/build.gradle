@@ -1,7 +1,7 @@
 buildscript {
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0'
@@ -13,8 +13,8 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
 }
 
@@ -45,8 +45,6 @@ ext {
     daggerVersion = '2.16'
     dexmakerVersion = '1.2'
 }
-
-
 
 //When there is an error in code generation you will may see
 //lots of errors due too missing generated code in your logs, we increase

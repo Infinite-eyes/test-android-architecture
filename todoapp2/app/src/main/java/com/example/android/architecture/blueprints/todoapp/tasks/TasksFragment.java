@@ -41,7 +41,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * @mail cwm930215@gmail.com
  * @since 2018/10/20 下午4:22
  **/
-@ActivityScoped
+//@ActivityScoped
 public class TasksFragment extends DaggerFragment implements TasksContract.View {
 
     @Inject
